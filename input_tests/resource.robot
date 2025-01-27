@@ -8,11 +8,11 @@ ${DELAY}          2
 ${FIRST_NAME}     Somsong
 ${LAST_NAME}      Sandee
 ${DESTINATION}    Europe
-${CONTACT_PERSON} Sodsai Sandee
+${CONTACT_PERSON}    Sodsai_Sandee
 ${RELATIONSHIP}   Mother
 ${EMAIL}          somsong@kkumail.com
 ${PHONE}          081-111-1234
-${FORM_URL}       http://${SERVER}/Form.html
+${FORM_URL}       http://demoapp\html\Form.html
 ${RECORD_SUCCESS_URL}  http://${SERVER}/Complete.html
 ${CHROME_BROWSER_PATH}    ${EXECDIR}${/}..${/}ChromeForTesting${/}chrome${/}chrome.exe
 ${CHROME_DRIVER_PATH}     ${EXECDIR}${/}..${/}ChromeForTesting${/}chromedriver${/}chromedriver.exe
