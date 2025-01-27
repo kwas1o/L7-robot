@@ -1,170 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2025-01-27T13:37:01.587741" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2025-01-27T17:21:10.925012" rpa="false" schemaversion="5">
 <suite id="s1" name="Completed Input" source="c:\การศึกษา\ปี 3\เทอม 2\Software Engineering\Lab\LAB8-7\L7-robot\input_tests\completed_input.robot">
 <test id="s1-t1" name="Open Form:" line="10">
 <kw name="Open Browser To Form Page" owner="resource">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-01-27T13:37:01.768583" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002086B7D43B0&gt;</msg>
+<msg time="2025-01-27T17:21:11.165501" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000028C376FF290&gt;</msg>
 <var>${chrome_options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-01-27T13:37:01.768583" elapsed="0.000000"/>
+<status status="PASS" start="2025-01-27T17:21:11.165501" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-01-27T13:37:01.768583" level="INFO">${chrome_options.binary_location} = c:\การศึกษา\ปี 3\เทอม 2\Software Engineering\Lab\LAB8-7\L7-robot\input_tests\..\ChromeForTesting\chrome\chrome.exe</msg>
+<msg time="2025-01-27T17:21:11.165501" level="INFO">${chrome_options.binary_location} = c:\การศึกษา\ปี 3\เทอม 2\Software Engineering\Lab\LAB8-7\L7-robot\input_tests\..\ChromeForTesting\chrome\chrome.exe</msg>
 <var>${chrome_options.binary_location}</var>
 <arg>${CHROME_BROWSER_PATH}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-01-27T13:37:01.768583" elapsed="0.000000"/>
+<status status="PASS" start="2025-01-27T17:21:11.165501" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-01-27T17:21:11.165501" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-01-27T17:21:11.167102" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-01-27T13:37:01.768583" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x000002086B7D4C50&gt;</msg>
+<msg time="2025-01-27T17:21:11.167102" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x0000028C379891F0&gt;</msg>
 <var>${service}</var>
 <arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-01-27T13:37:01.768583" elapsed="0.000000"/>
+<status status="PASS" start="2025-01-27T17:21:11.167102" elapsed="0.000000"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:01.768583" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-01-27T17:21:11.167102" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${chrome_options}</arg>
 <arg>service=${service}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-01-27T13:37:01.768583" elapsed="1.127712"/>
+<status status="PASS" start="2025-01-27T17:21:11.167102" elapsed="1.210457"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:02.896815" level="INFO">Opening url 'http://localhost:7272/Form.html'</msg>
+<msg time="2025-01-27T17:21:12.378571" level="INFO">Opening url 'http://localhost:7272/Form.html'</msg>
 <arg>${FORM_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-01-27T13:37:02.896295" elapsed="0.381193"/>
+<status status="PASS" start="2025-01-27T17:21:12.378571" elapsed="0.361377"/>
 </kw>
-<doc>Launch Chrome browser using specified paths and navigate to the URL.</doc>
-<status status="PASS" start="2025-01-27T13:37:01.768583" elapsed="1.508905"/>
+<doc>Launch Chrome browser in headless mode using specified paths and navigate to the URL.</doc>
+<status status="PASS" start="2025-01-27T17:21:11.165501" elapsed="1.574447"/>
 </kw>
-<status status="PASS" start="2025-01-27T13:37:01.768583" elapsed="1.509904"/>
+<status status="PASS" start="2025-01-27T17:21:11.165153" elapsed="1.575506"/>
 </test>
 <test id="s1-t2" name="Record Success:" line="13">
 <kw name="Input First Name" owner="resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.281048" level="INFO">Typing text 'Somsong' into text field 'firstname'.</msg>
+<msg time="2025-01-27T17:21:12.744345" level="INFO">Typing text 'Somsong' into text field 'firstname'.</msg>
 <arg>firstname</arg>
 <arg>${FIRST_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.279486" elapsed="0.093434"/>
+<status status="PASS" start="2025-01-27T17:21:12.740659" elapsed="0.134462"/>
 </kw>
 <arg>Somsong</arg>
-<status status="PASS" start="2025-01-27T13:37:03.279486" elapsed="0.093434"/>
+<status status="PASS" start="2025-01-27T17:21:12.740659" elapsed="0.134462"/>
 </kw>
 <kw name="Input Last Name" owner="resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.373942" level="INFO">Typing text 'Sandee' into text field 'lastname'.</msg>
+<msg time="2025-01-27T17:21:12.876126" level="INFO">Typing text 'Sandee' into text field 'lastname'.</msg>
 <arg>lastname</arg>
 <arg>${LAST_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.373942" elapsed="0.067106"/>
+<status status="PASS" start="2025-01-27T17:21:12.876126" elapsed="0.085105"/>
 </kw>
 <arg>Sandee</arg>
-<status status="PASS" start="2025-01-27T13:37:03.372920" elapsed="0.068128"/>
+<status status="PASS" start="2025-01-27T17:21:12.876126" elapsed="0.085105"/>
 </kw>
 <kw name="Input Destination" owner="resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.441048" level="INFO">Typing text 'Europe' into text field 'destination'.</msg>
+<msg time="2025-01-27T17:21:12.962230" level="INFO">Typing text 'Europe' into text field 'destination'.</msg>
 <arg>destination</arg>
 <arg>${DESTINATION}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.441048" elapsed="0.066709"/>
+<status status="PASS" start="2025-01-27T17:21:12.962230" elapsed="0.101557"/>
 </kw>
 <arg>Europe</arg>
-<status status="PASS" start="2025-01-27T13:37:03.441048" elapsed="0.066709"/>
+<status status="PASS" start="2025-01-27T17:21:12.962230" elapsed="0.101557"/>
 </kw>
 <kw name="Input Contact Person" owner="resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.507757" level="INFO">Typing text 'Sodsai Sandee' into text field 'contactperson'.</msg>
+<msg time="2025-01-27T17:21:13.065356" level="INFO">Typing text 'Sodsai Sandee' into text field 'contactperson'.</msg>
 <arg>contactperson</arg>
 <arg>${CONTACT_PERSON}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.507757" elapsed="0.066531"/>
+<status status="PASS" start="2025-01-27T17:21:13.064834" elapsed="0.078076"/>
 </kw>
 <arg>Sodsai Sandee</arg>
-<status status="PASS" start="2025-01-27T13:37:03.507757" elapsed="0.066531"/>
+<status status="PASS" start="2025-01-27T17:21:13.064834" elapsed="0.078076"/>
 </kw>
 <kw name="Input Relationship" owner="resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.574288" level="INFO">Typing text 'Mother' into text field 'relationship'.</msg>
+<msg time="2025-01-27T17:21:13.143971" level="INFO">Typing text 'Mother' into text field 'relationship'.</msg>
 <arg>relationship</arg>
 <arg>${RELATIONSHIP}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.574288" elapsed="0.053276"/>
+<status status="PASS" start="2025-01-27T17:21:13.143971" elapsed="0.055379"/>
 </kw>
 <arg>Mother</arg>
-<status status="PASS" start="2025-01-27T13:37:03.574288" elapsed="0.053276"/>
+<status status="PASS" start="2025-01-27T17:21:13.143429" elapsed="0.055921"/>
 </kw>
 <kw name="Input Email" owner="resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.627564" level="INFO">Typing text 'somsong@kkumail.com' into text field 'email'.</msg>
+<msg time="2025-01-27T17:21:13.200397" level="INFO">Typing text 'somsong@kkumail.com' into text field 'email'.</msg>
 <arg>email</arg>
 <arg>${EMAIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.627564" elapsed="0.063454"/>
+<status status="PASS" start="2025-01-27T17:21:13.199872" elapsed="0.058997"/>
 </kw>
 <arg>somsong@kkumail.com</arg>
-<status status="PASS" start="2025-01-27T13:37:03.627564" elapsed="0.063454"/>
+<status status="PASS" start="2025-01-27T17:21:13.199872" elapsed="0.058997"/>
 </kw>
 <kw name="Input Phone Number" owner="resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.691018" level="INFO">Typing text '081-111-1234' into text field 'phone'.</msg>
+<msg time="2025-01-27T17:21:13.259893" level="INFO">Typing text '081-111-1234' into text field 'phone'.</msg>
 <arg>phone</arg>
 <arg>${PHONE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.691018" elapsed="0.060753"/>
+<status status="PASS" start="2025-01-27T17:21:13.259893" elapsed="0.090002"/>
 </kw>
 <arg>081-111-1234</arg>
-<status status="PASS" start="2025-01-27T13:37:03.691018" elapsed="0.060753"/>
+<status status="PASS" start="2025-01-27T17:21:13.259893" elapsed="0.090002"/>
 </kw>
 <kw name="Submit Form" owner="resource">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.752774" level="INFO">Clicking button 'submitButton'.</msg>
+<msg time="2025-01-27T17:21:13.350550" level="INFO">Clicking button 'submitButton'.</msg>
 <arg>submitButton</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.752774" elapsed="0.061040"/>
+<status status="PASS" start="2025-01-27T17:21:13.350550" elapsed="0.068937"/>
 </kw>
 <doc>Submit the form after filling out all fields.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.752774" elapsed="0.061040"/>
+<status status="PASS" start="2025-01-27T17:21:13.350550" elapsed="0.068937"/>
 </kw>
 <kw name="Record Success Page Should Be Open" owner="resource">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-01-27T13:37:03.886058" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-01-27T13:37:03.886058" level="FAIL">Location should have been 'http://localhost:7272/Complete.html' but was 'http://localhost:7272/Form.html'.</msg>
+<msg time="2025-01-27T17:21:13.473175" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-27T17:21:13.473175" level="FAIL">Location should have been 'http://localhost:7272/Complete.html' but was 'http://localhost:7272/Form.html'.</msg>
 <arg>${RECORD_SUCCESS_URL}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="FAIL" start="2025-01-27T13:37:03.814814" elapsed="0.073591">Location should have been 'http://localhost:7272/Complete.html' but was 'http://localhost:7272/Form.html'.</status>
+<status status="FAIL" start="2025-01-27T17:21:13.420512" elapsed="0.054415">Location should have been 'http://localhost:7272/Complete.html' but was 'http://localhost:7272/Form.html'.</status>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
 <arg>Completed</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" start="2025-01-27T13:37:03.888405" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-01-27T17:21:13.475782" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>Our agent will contact you shortly.</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2025-01-27T13:37:03.888405" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-01-27T17:21:13.475782" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>Thank you for your patience.</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2025-01-27T13:37:03.888405" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-01-27T17:21:13.475782" elapsed="0.000000"/>
 </kw>
 <doc>Verifies the success page after the form is submitted.</doc>
-<status status="FAIL" start="2025-01-27T13:37:03.813814" elapsed="0.074591">Location should have been 'http://localhost:7272/Complete.html' but was 'http://localhost:7272/Form.html'.</status>
+<status status="FAIL" start="2025-01-27T17:21:13.420512" elapsed="0.055270">Location should have been 'http://localhost:7272/Complete.html' but was 'http://localhost:7272/Form.html'.</status>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-01-27T13:37:03.888405" elapsed="2.322266"/>
+<status status="PASS" start="2025-01-27T17:21:13.476780" elapsed="2.268471"/>
 </kw>
-<status status="FAIL" start="2025-01-27T13:37:03.279486" elapsed="2.931185">Location should have been 'http://localhost:7272/Complete.html' but was 'http://localhost:7272/Form.html'.</status>
+<status status="FAIL" start="2025-01-27T17:21:12.740659" elapsed="3.004592">Location should have been 'http://localhost:7272/Complete.html' but was 'http://localhost:7272/Form.html'.</status>
 </test>
-<status status="FAIL" start="2025-01-27T13:37:01.587741" elapsed="4.626729"/>
+<status status="FAIL" start="2025-01-27T17:21:10.925012" elapsed="4.820239"/>
 </suite>
 <statistics>
 <total>
@@ -177,6 +191,5 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2025-01-27T13:37:01.758563" level="ERROR">Error in file 'c:\การศึกษา\ปี 3\เทอม 2\Software Engineering\Lab\LAB8-7\L7-robot\input_tests\resource.robot' on line 11: Setting variable '${CONTACT_PERSON} Sodsai Sandee' failed: Invalid variable name '${CONTACT_PERSON} Sodsai Sandee'.</msg>
 </errors>
 </robot>

@@ -8,7 +8,7 @@ ${DELAY}          2
 ${FIRST_NAME}     Somsong
 ${LAST_NAME}      Sandee
 ${DESTINATION}    Europe
-${CONTACT_PERSON}    Sodsai_Sandee
+${CONTACT_PERSON}    Sodsai Sandee
 ${RELATIONSHIP}   Mother
 ${EMAIL}          somsong@kkumail.com
 ${PHONE}          081-111-1234
@@ -20,9 +20,11 @@ ${CHROME_DRIVER_PATH}     ${EXECDIR}${/}..${/}ChromeForTesting${/}chromedriver${
 *** Keywords ***
 
 Open Browser To Form Page
-    [Documentation]    Launch Chrome browser using specified paths and navigate to the URL.
+    [Documentation]    Launch Chrome browser in headless mode using specified paths and navigate to the URL.
     ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
     ${chrome_options.binary_location}    Set Variable    ${CHROME_BROWSER_PATH}
+    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --disable-gpu
     ${service}           Evaluate    sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")
     Create Webdriver    Chrome    options=${chrome_options}    service=${service}
     Go To    ${FORM_URL}
